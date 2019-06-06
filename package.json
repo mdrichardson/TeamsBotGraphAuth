@@ -1,0 +1,63 @@
+{
+  "name": "Bot",
+  "version": "1.0.0",
+  "description": "An empty Teams Bot.",
+  "scripts": {
+    "start": "node dist/server.js",
+    "test": "mocha --require ts-node/register test/**/*.ts",
+    "coverage": "nyc mocha"
+  },
+  "author": "Author",
+  "dependencies": {
+    "body-parser": "latest",
+    "botbuilder": "latest",
+    "config": "^1.28.1",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.1.0",
+    "nyc": "^13.3.0"
+  },
+  "nyc": {
+    "include": [
+      "src/**/*.ts"
+    ],
+    "exclude": [
+      "test/**/*.ts",
+      "src/routes/*.ts",
+      "src/models/*.ts",
+      "src/repositories/*.ts",
+      "src/app.ts",
+      "src/server.ts"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "text-summary",
+      "html"
+    ],
+    "all": true,
+    "sourceMap": true,
+    "instrument": true
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/crypto-js": "^3.1.43",
+    "@types/mocha": "^5.2.6",
+    "@types/mongodb": "^3.1.22",
+    "chai": "^4.2.0",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-typescript": "^5.0.1",
+    "gulp-zip": "^4.0.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^6.1.2",
+    "nyc": "^13.3.0",
+    "source-map-support": "^0.5.12",
+    "ts-mockito": "^2.3.1",
+    "ts-node": "^8.0.3",
+    "typescript": "^3.3.4000"
+  }
+}
