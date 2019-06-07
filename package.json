@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node dist/server.js",
     "test": "mocha --require ts-node/register test/**/*.ts",
-    "coverage": "nyc mocha"
+    "coverage": "nyc mocha",
+    "build": "gulp"
   },
   "author": "Author",
   "dependencies": {

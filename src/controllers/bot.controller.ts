@@ -16,6 +16,11 @@ export class BotController extends ActivityHandler {
       await this.handleMessage(turnContext);
       await next();
     });
+
+this.onUnrecognizedActivityType(async (turnContext, next) => {
+    console.log(`GOT : ${ JSON.stringify(turnContext.activity, null, 2)}`)
+});
+    
   }
 
   private handleMessage = async (turnContext: TurnContext) => {

@@ -1,10 +1,10 @@
 {
     "app": {
-        "port": 3333
+        "port": 3979
     },
     "bot": {
-        "appId": "00000000-0000-0000-0000-000000000000",
-        "appPassword": "yourBotAppPassword"
+        "appId": "e448cbbc-308e-47f2-ad8b-aa333855f1cd",
+        "appPassword": "rILnHL-m+Y85+N/cB8u7Yq-_N2tx3p?n"
     },
     "storage": "memory"
 }

@@ -16,7 +16,11 @@ export class AuthService {
 
     this.userStates.push(state);
 
-    return "https://5d755b30.ngrok.io/html/auth-start.html?authorizationUrl=" + encodeURIComponent(`https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=fdf7bf33-3644-434e-83d5-b3575e33f008&state=${JSON.stringify(state)}&redirect_uri=https://5d755b30.ngrok.io/callback&response_type=code&response_mode=query&scope=user.readbasic.all`);
+    const me ='https://bfsupportrelay.servicebus.windows.net/vmicricRelay3979';
+
+    const old = 'https://5d755b30.ngrok.io';
+
+    return `${ me }/html/auth-start.html?authorizationUrl=` + encodeURIComponent(`https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=e448cbbc-308e-47f2-ad8b-aa333855f1cd&state=${JSON.stringify(state)}&redirect_uri=${ me }/callback&response_type=code&response_mode=query&scope=user.readbasic.all`);
   }
 
   public getUserState(userId: string) {

@@ -14,10 +14,16 @@ export class BaseRouterWrapper implements IRouterWrapper {
   public setupRoutes(): void {
     this.apiRouter.setupRoutes();
     this.expressRouter.use('/api', this.apiRouter.getRouter());
+    // this.expressRouter.use('/html', (req, res) => {
+    //     res.send(__dirname + '/public/auth-start.html');
+    // });
     this.expressRouter.use('/callback', (req, res, next) => {
+        // console.log(JSON.stringify(req));
+        console.log('callback received');
       const state = JSON.parse(req.query.state);
       const savedState = this.authService.getUserState(state.userId);
       if (savedState.securityToken == state.securityToken) {
+          console.log('success');
         res.render('oauth-callback-success', {
           verificationCode: state.securityToken,
           providerName: 'Graph',
