@@ -11,7 +11,7 @@
   "dependencies": {
     "body-parser": "latest",
     "botbuilder": "latest",
-    "config": "^1.28.1",
+    "config": "^3.2.0",
     "express": "^4.16.4",
     "express-handlebars": "^3.1.0",
     "nyc": "^13.3.0"
